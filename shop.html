@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>shop</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
+<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	body{
+		    background-color: snow;
+		    overflow-x: hidden;
+	}
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0px 0px 6px #db709387;
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.modal-content{
+	box-shadow: 1px 2px 8px #fff7f7a1;
+    background-color: #000000c9;
+    color: aliceblue;
+}
+
+/*input{
+	background-color: #0000004d;
+    color: whitesmoke;
+    border: 1px solid #210505;
+    border-radius: 27px;
+}*/
+.aws:hover{
+	transform: translateY(-2px);
+}
+.flash{
+	    box-shadow: 3px 3px 3px #1d1212d9;
+    color: whitesmoke;
+    border: 3px solid #7a2222ad;
+    background-color: #730b0be3;
+    border-radius: 2px;
+}
+.logo{
+	color: black;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px white;
+    font-family: fantasy;
+    transform: rotate(-6deg);
+    letter-spacing: 3px;
+    animation-name: logo;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+
+}
+.logo:hover{
+	transform: rotate(0deg);
+}
+@keyframes logo{
+	from {transform: rotate(-6deg);}
+	to {transform: rotate(0deg);}
+}
+
+.navbar-nav .nav-link.active,.signin{
+    color: rgb(255 255 255 / 63%);
+}
+.signin{
+	padding: 2px;
+	top: 10px;
+}
+.cartbtn{
+	background-color: #1b7dff1a;
+    border-radius: 29px;
+    color: #0000009e;
+    width: 210px;
+    align-items: center;
+    border: 3px solid #29435ec4;
+    padding: 1px;
+    font-weight: inherit;
+    font-family: system-ui;
+
+}
+.navbar-nav .nav-link.active, .signin {
+    color: rgb(255 255 255 / 63%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+#myBtn{text-shadow: 2px 1px 2px #947eaa;
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 36px;
+    z-index: 91;
+    font-size: 7px;
+    border: none;
+    outline: none;
+    color: black;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 115px;
+    background-color: #ffffff24;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="addtocart.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".small_img").hover(function(){
+			$(".bigg_img").attr('src',$(this).attr('src'));
+		});
+	});
+</script>
+</head>
+
+<body data-offset="50" data-spy="scroll" data-target=".navbar" class="dark-theme index-3">
+	<!-- <div class="page-loader">
+		<div class="loader">Loading...</div>
+	</div> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script type="text/javascript" src="link.js"></script>
+<script type="text/javascript">
+	function validateform() {
+		var val= document.forms["fname"]["uname"].value
+			if(val=="")
+			{
+				alert("firstname must be filled out");
+				return false;	
+			}
+			var val=document.forms["fname"]["email"].value
+			if(val=="")
+			{
+				alert("email should be filled out");
+				return false;
+			}
+	}	
+</script>
+<!-- navbar -->
+<div class="row">
+	<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 mx-2" style="padding: 0; margin:0;">
+		<nav class="navbar navbar-expand-lg bg-dark ">
+	  		<div class="container-fluid">
+	    	<a class="navbar-brand " href="#"><img src="head.png" alt="" width="100" height="50" class="d-inline-block align-text-top">
+	    		<h3 class="mx-4 logo" style=""> SHOP</h3></a>
+	    	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	      	<span class="navbar-toggler-icon"></span>
+	    	</button>
+	    	<div class="collapse navbar-collapse" id="navbarNav">
+	     	<ul class="navbar-nav">
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="#home">HOME</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link active" href="#products">PRODUCTS</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link active" href="#"><button class="d-inline-block btn btn-dark signin" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">LOG IN</button></a>
+
+	           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  					<div class="modal-dialog">
+    				<div class="modal-content">
+      				<div class="modal-header">
+        			<h1 class="modal-title fs-5" id="exampleModalLabel">LOG IN</h1>
+        			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     			 	</div>
+      				<div class="modal-body">
+        			<form action="#" method="post" onSubmit="return validateform()" name="fname">
+        				User Name <input type="text" name="uname" placeholder="enter user name"><br><br>
+        				Enter Email ID &nbsp;&nbsp;<input type="email" name="email" placeholder="Enter number or Email"><br>
+        				<hr>
+        				<button type="button" class="btn btn-outline-dark " data-bs-dismiss="modal">Close</button>
+		        		<button type="submit" value="submit" class="btn btn-outline-danger">SIGN IN</button>
+		        	</form>        			
+      				</div>
+		   		 	</div>
+		 			</div>
+				</div>
+	        </li>
+	       	</ul>
+	    	</div>
+	  		</div>
+		</nav>
+	</div>
+</div>
+
+<!-- icon nav bar second -->
+<div class="row pt-4" style="margin: 0; padding: 0;">
+	<div class="col-lg-8 col-sm-8 col-md-8 col-lg-8 mx-5 text-center d-lg-none d-xl-block">
+		<span class="fw-light flash" style="font-size:1vw; padding: 10px;">Use code "SDSALE30" to get 30% off on purchase of Rs.1,500 and more</span>
+	</div>
+	<div class="col-lg-1 col-sm-1 col-md-1 col-lg-1"></div>
+	<div class="col-lg-2 col-sm-2 col-md-2 text-end" style="display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;">
+	<i class="fa fas fa-heart aws opacity-52" style="font-size:2vw;color:black;"></i>&nbsp;&nbsp;
+	<i class="fa fa fa-paypal aws opacity-52" style="font-size:2vw;color:black;"></i>&nbsp;&nbsp;
+	<!-- <button type="button" class="btn btn-light position-relative">
+	<a class="text-decoration-none" href="">
+  	<i class="fa fa-shopping-cart aws opacity-52" style="font-size:2vw;color:black;"></i>&nbsp;&nbsp;
+  	<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    1+
+    <span class="visually-hidden">cccc</span>
+  	</span>
+  	</a>
+	</button> -->
+	<div class="item">
+	<h5 id="h1style"><i class="fa fa-shopping-cart" style="font-size:30px;"></i></h5>	
+	</div>
+	</div>	
+	<div class="col-lg-1 col-sm-1 col-md-1 col-lg-1"></div>
+</div>
+</div>
+
+
+</div>
+<!-- caurosel page -->
+<div class="container pt-2">
+	<div class="row">
+		<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/deks4.jpg?v=1639984472 " class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        
+        <button type="submit" class="btn btn-outline-danger text-white"><a class="text-decoration-none link-light" href="speaker.html">BOOK ME NOW</a></button>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/marvel_Nfy_wbanner_1.jpg?v=1637932076" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+	</div>
+</div>
+
+<!-- products lists -->
+<div class="container pt-5" id="products">
+<div class="row" >
+	<div class="col">
+		<div class="card" style="width: 18rem;">
+  		<img src="earphn1.jpg" class="card-img-top" alt="...">
+  		<div class="card-body">
+  		<a href="speaker.html" class="text-decoration-none link-dark" >
+    	<p class="card-text"><span class="fw-bolder">boAt Airdopes</span><br> 131 Captain America Marvel Edition | Wireless Earbuds with 13mm Audio Drivers</p>
+    	<p class="card-text fw-semibold align-text-end">$200 &nbsp; <span class="text-decoration-line-through fw-light">800$</span> &nbsp;&nbsp;&nbsp;
+    		<!-- <button type="button" class="btn btn-outline-dark ">ADD TO CART</button> -->
+    	</a> 
+    	<span class="b1">Add-cart</span>
+		</p>
+ 		</div>
+		</div>
+	</div>
+	
+
+	<div class="col">
+		<div class="card" style="width: 18rem;">
+  		<img src="headphnboat1.jpg" class="card-img-top" alt="...">
+  		<div class="card-body">
+  		<a href="" class="text-decoration-none link-dark" >
+    	<p class="card-text"><span class="fw-bolder">boAt Airdopes</span><br> 131 Captain America Marvel Edition | Wireless Earbuds with 13mm Audio Drivers</p>
+    	<p class="card-text fw-semibold align-text-end">$200 &nbsp; <span class="text-decoration-line-through fw-light">800$</span> &nbsp;&nbsp;&nbsp;
+    		<!-- <button type="button" class="btn btn-outline-dark ">ADD TO CART</button> -->
+    	</a> 
+    	<span class="b1">Add-cart</span>
+		</p>
+ 		</div>
+		</div>
+	</div>
+	<div class="col">
+		<div class="card" style="width: 18rem;">
+  		<img src="bluetooth.jpg" class="card-img-top" alt="...">
+  		<div class="card-body">
+  		<a href="speaker.html" class="text-decoration-none link-dark" >
+    	<p class="card-text"><span class="fw-bolder">boAt Airdopes</span><br> 131 Captain America Marvel Edition | Wireless Earbuds with 13mm Audio Drivers</p>
+    	<p class="card-text fw-semibold align-text-end">$200 &nbsp; <span class="text-decoration-line-through fw-light">800$</span> &nbsp;&nbsp;&nbsp;
+    		<!-- <button type="button" class="btn btn-outline-dark ">ADD TO CART</button> -->
+    	</a> 
+    	<span class="b1">Add-cart</span>
+		</p>	
+ 		</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="card" style="width: 18rem;">
+  		<img src="ironbluetooth.jpg" class="card-img-top" alt="...">
+  		<div class="card-body">
+  		<a href="speaker.html" class="text-decoration-none link-dark" >
+    	<p class="card-text"><span class="fw-bolder">boAt Airdopes</span><br> 131 Captain America Marvel Edition | Wireless Earbuds with 13mm Audio Drivers</p>
+    	<p class="card-text fw-semibold align-text-end">$200 &nbsp; <span class="text-decoration-line-through fw-light">800$</span> &nbsp;&nbsp;&nbsp;
+    		<!-- <button type="button" class="btn btn-outline-dark ">ADD TO CART</button> -->
+    	</a> 
+    	<span class="b1">Add-cart</span>
+		</p>	
+ 		</div>
+		</div>
+	</div>
+	<div class="col pt-4">
+		<div class="card" style="width: 18rem;">
+  		<img src="wanda.png" class="card-img-top" alt="...">
+  		<div class="card-body">
+  		<a href="" class="text-decoration-none link-dark" >
+    	<p class="card-text"><span class="fw-bolder">boAt Airdopes</span><br> 131 Captain America Marvel Edition | Wireless Earbuds with 13mm Audio Drivers</p>
+    	<p class="card-text fw-semibold align-text-end">$200 &nbsp; <span class="text-decoration-line-through fw-light">800$</span> &nbsp;&nbsp;&nbsp;
+    		<!-- <button type="button" class="btn btn-outline-dark ">ADD TO CART</button> -->
+    	</a> 
+    	<span class="b1">Add-cart</span>
+		</p>
+ 		</div>
+		</div>
+	</div>
+	<div class="col pt-4">
+		<div class="card" style="width: 18rem;">
+  		<img src="bottle.jpg" class="card-img-top" alt="..." height="285px">
+  		<div class="card-body">
+  		<a href="" class="text-decoration-none link-dark" >
+    	<p class="card-text"><span class="fw-bolder">boAt Airdopes</span><br> 131 Captain America Marvel Edition | Wireless Earbuds with 13mm Audio Drivers</p>
+    	<p class="card-text fw-semibold align-text-end">$200 &nbsp; <span class="text-decoration-line-through fw-light">800$</span> &nbsp;&nbsp;&nbsp;
+    		<!-- <button type="button" class="btn btn-outline-dark ">ADD TO CART</button> -->
+    	</a> 
+    	<span class="b1">Add-cart</span>
+		</p>	
+ 		</div>
+		</div>
+	</div>
+	<div class="col pt-4">
+		<div class="card" style="width: 18rem;">
+  		<img src="bluetooth2.jpg" class="card-img-top" alt="...">
+  		<div class="card-body">
+  		<a href="" class="text-decoration-none link-dark" >
+    	<p class="card-text"><span class="fw-bolder">boAt Airdopes</span><br> 131 Captain America Marvel Edition | Wireless Earbuds with 13mm Audio Drivers</p>
+    	<p class="card-text fw-semibold align-text-end">$200 &nbsp; <span class="text-decoration-line-through fw-light">800$</span> &nbsp;&nbsp;&nbsp;
+    		<!-- <button type="button" class="btn btn-outline-dark ">ADD TO CART</button> -->
+    	</a> 
+    	<span class="b1">Add-cart</span>
+		</p>	
+ 		</div>
+		</div>
+	</div>
+	<div class="col pt-4">
+		<div class="card" style="width: 18rem;">
+  		<img src="cushion.jpg" class="card-img-top" alt="..." height="285px">
+  		<div class="card-body">
+  		<a href="" class="text-decoration-none link-dark" >
+    	<p class="card-text"><span class="fw-bolder">boAt Airdopes</span><br> 131 Captain America Marvel Edition | Wireless Earbuds with 13mm Audio Drivers</p>
+    	<p class="card-text fw-semibold align-text-end">$200 &nbsp; <span class="text-decoration-line-through fw-light">800$</span> &nbsp;&nbsp;&nbsp;
+    		<!-- <button type="button" class="btn btn-outline-dark ">ADD TO CART</button> -->
+    	</a> 
+    	<span class="b1">Add-cart</span>
+		</p>
+    	<script type="text/javascript">
+		var noti = document.querySelector('h5');
+		var button = document.getElementsByTagName('span');
+		for(var but of button){
+		but.addEventListener('click', (e)=>{
+			var add = Number(noti.getAttribute('data-count') || 0);
+			noti.setAttribute('data-count', add +1);
+			noti.classList.add('zero')
+		})
+		}
+		</script>	
+ 		</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<!-- back to top button -->
+      <button class="btn" onclick="topFunction()" id="myBtn" title="Go to top">
+       <i class="fa fa-sort-asc" style="font-size:24px"></i>
+      </button>
+      <script>
+      var mybutton = document.getElementById("myBtn");
+
+
+      window.onscroll = function() {scroll()};
+
+      function scroll() {
+        if ( document.documentElement.scrollTop > 500) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+      </script>
+
+ 
+<!-- footer section -->
+
+    
+    <div class="section section-min pt-5" style="color:dimgrey;">
+        <footer class="footer" style="background-color:black;">
+         <div class="container">              
+         <div class="row">
+                <div class="clearfix col-md-12 col-sm-12 col-lg-12">
+                        <hr>
+                   </div>
+                   <div class="col-md-4 col-sm-12 col-lg-4" >
+                       <div class="f_logo">
+                        <a href="#"><img src="assets-for-index-2/img/logo.png" alt="" /></a>
+                        <p>SHOP WITH US</p>
+                       </div>
+                   </div>
+
+                   <div class="col-md-4 col-sm-12 col-lg-4 info_menu">
+                        <h4>INFORMATIONS</h4>
+                        
+                        <ul class="list-unstyled">
+                            <li><a class="text-decoration-none link-dark" href="#">  Delivery information </a></li>
+                            <li><a class="text-decoration-none link-dark" href="#">   Privacy Policy </a></li>
+                            <li><a class="text-decoration-none link-dark" href="#">   Terms & Conditions </a></li>
+                            <li><a class="text-decoration-none link-dark" href="#">   Return & Exchange </a></li>
+                        </ul>
+
+                        <ul class="list-unstyled">
+                            <li><a class="text-decoration-none link-dark" href="#">  Free Shipping </a></li>
+                            <li><a class="text-decoration-none link-dark" href="#">   Order Status </a></li>
+                            <li><a class="text-decoration-none link-dark" href="#">   Gift Cards</a></li>
+                            <li><a class="text-decoration-none link-dark" href="#">   International</a></li>
+                        </ul>
+                   </div>
+
+                   <div class="col-md-4  col-sm-12">
+                    <div class="footer-newsletter">
+                        <div class="center">
+                            <h4>stay with us</h4>
+                            <form action="#" method="post">
+                                <div class="input-group">
+                                    <input class="form-control " type="text" placeholder="e-mail"> 
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><span class="ti-arrow-right"></span></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <div class="social">
+                                <ul class="list-unstyled">
+                                    <li class="fndus ">Find us here:</li>
+                                    <li>
+                                    <a href="https://www.instagram.com/marvel/?hl=en" target="_blank"><i class="fa fa-instagram changeme" style="font-size:25px;color:white;"></i></a>&nbsp;&nbsp;
+                                    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-f changeme" style="font-size:25px;color:white;"></i></a>&nbsp;&nbsp;
+                                    <a href="http://twitter.com/" target="_blank"><i class="fa fa-twitter changeme" style="font-size:25px;color:white;"></i></a>&nbsp;&nbsp;
+                                    <a href="https://youtube.com/" target="_blank"><i class="fa fa-youtube changeme" style="font-size:25px;color:white;"></i></a>&nbsp;&nbsp;
+                                    <a href="http://pinterest.com/" target="_blank"><i class="fa fa-pinterest changeme" style="font-size:25px;color:white;"></i></a>&nbsp;&nbsp;
+                                </li>
+                                </ul>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                   </div>
+
+                   <div class="clearfix col-md-12 col-sm-12">
+                        <hr>
+                   </div>
+
+                   <div class="col-md-12 col-sm-12">
+                        <div class="footer-copyright text-center">
+                             <p>© 2022 Bestshop - All Rights Reserved.</p>
+                        </div>
+                   </div>
+                   
+               </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

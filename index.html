@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>marvel</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+	
+	<style type="text/css">
+		
+		body{
+			background-color:ghostwhite;
+      overflow-x: hidden;
+		}
+
+		.change-mycolor{
+			fill: red;
+		}
+		
+		.headerstyle{
+      padding: 2%;
+			font-weight: 500;
+    font-size: 1vw;
+    font-family: system-ui;
+		}
+
+.nav-link{
+	color:floralwhite;
+	font-weight: 500;
+}
+
+.subscription{
+	fill: orangered;
+}
+.offcanvas-body{
+  font-family: system-ui;
+    font-size: 12px;
+}
+.series img{
+  width: 100%;
+  margin-top: 15px;
+  box-shadow: -4px 4px 5px 0 #000;
+}
+.series img:hover{
+  transform: translateY(-10px);
+}
+.upmovie{
+  text-shadow: 2px 3px #cab7b7;
+    width: 340PX;
+    font-family: fantasy;
+    letter-spacing: 6px;
+    font-variant: all-small-caps;
+    color: black;
+}
+.insider{
+ color: brown;
+    font-variant: small-caps;
+    font-family: fantasy;
+    letter-spacing: 9px;
+    text-align: center;
+    opacity: 50%;
+}
+button.B1{
+  width: 300px;
+  height: 70px;
+  font-size: 36px;
+  font-family: 'Bebas Neue', cursive;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 88px;
+  box-shadow: 6px 0px 0px black;
+  outline: transparent;
+  position: relative;
+}
+
+button.B1:hover{
+  color: black;
+}
+button.B2{
+  width: 7em;
+    border-radius: 81px;
+    height: 3em;
+    font-size: 36px;
+    font-family: 'Bebas Neue', cursive;
+    background: linear-gradient(72deg, transparent 36%, red 108%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 88px;
+    box-shadow: 6px 0px 0px black;
+    outline: transparent;
+    position: relative;
+
+}
+.footerstyling{
+  letter-spacing: 3px;
+    color: antiquewhite;
+    font-family: inherit;
+}
+i.fa.changeme:hover{
+    opacity: 10%;
+}
+.footerstyl2{
+  color: gray;
+  opacity: 70%;
+ font-family:  "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 10px;
+letter-spacing: -0.4px;
+word-spacing: -0.8px;
+
+font-weight: 400;
+text-decoration: none solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+  font-size: 1vw;
+}
+
+
+.scrollToTop {
+               width: 63px;
+    background-color: #000000;
+    border: 1px solid transparent;
+    border-radius: 10%;
+    box-shadow: -5px 4px 5px 0px #a30c0cb8;
+    height: 71px;
+    transform-box: view-box;
+    transform: skewX(13deg);
+    transform: translateY(6px) rotate(491deg);
+    float: right;
+    
+        }
+#fafa{
+      opacity: 76%;
+    transform: rotate(227deg);
+    font-size: 72px;
+    color: #5b4e4e;
+}
+.btn11
+{
+  position: absolute;
+  left: 50px;
+  right: 10px;
+
+}
+#myBtn{text-shadow: 2px 1px 2px #947eaa;
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 36px;
+    z-index: 91;
+    font-size: 7px;
+    border: none;
+    outline: none;
+    color: black;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 115px;
+    background-color: #ffffff24;
+}
+.fa-sort-up:before, .fa-sort-asc:before {
+    font-size: 35px;
+    content: "\f0de";
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script type="text/javascript">
+/*  document.addEventListener("DOMContentLoaded", function(){
+// make it as accordion for smaller screens
+if (window.innerWidth > 1000) {
+
+  document.querySelectorAll('.navbar .nav-item').forEach(function(everyitem){
+
+    everyitem.addEventListener('mouseover', function(e){
+
+      let el_link = this.querySelector('a[data-bs-toggle]');
+
+      if(el_link != null){
+        let nextEl = el_link.nextElementSibling;
+        el_link.classList.add('show');
+        nextEl.classList.add('show');
+      }
+
+    });
+    everyitem.addEventListener('mouseleave', function(e){
+      let el_link = this.querySelector('a[data-bs-toggle]');
+
+      if(el_link != null){
+        let nextEl = el_link.nextElementSibling;
+        el_link.classList.remove('show');
+        nextEl.classList.remove('show');
+      }
+
+
+    })
+  });
+
+}
+// end if innerWidth
+});*/ 
+   // function scrollToTop() {
+   //          window.scrollTo(0, 0);
+   //      }
+</script>
+<!-- movie header -->
+	<div class="container-fluid">
+  <div class="row border-bottom border-1 border-light">
+    <div class="col p-3 bg-dark text-white  " style="text-align: center; height:90px;">
+    	<p class="headerstyle"><svg class="change-mycolor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65.6 66.7" height="20px"><path fill-rule="evenodd" d="M59.5 15.1L53 51.4c0 .4-.3.6-.6.6h-6.5c-.3 0-.6-.2-.8-.6l-8.8-24.7H36l-4.3 24.7c-.1.3-.3.6-.6.6H25c-.3 0-.6-.2-.5-.6l6.6-37.3c.1-.3.3-.6.6-.6h6.4c.5 0 .7.2.8.6l8.8 24.7h.3l5.5-30.4C47.9 3.7 40.6.9 32.7.9 14.7.9.2 15.5.2 33.4c0 8.8 3.5 16.7 9.1 22.5l7.3-41.7c.1-.3.3-.6.6-.6H24c.3 0 .5.2.5.6l-8.3 47.2c4.8 2.8 10.4 4.5 16.4 4.5 17.9 0 32.5-14.5 32.5-32.5 0-6.8-2.1-13.1-5.6-18.3z"></path></svg> SIGN IN | JOIN</p>
+    </div>
+    <div class="col p-3 bg-dark text-white" style="text-align:center; height:90px">
+    	<img  src="head.png"  width="max-content" height="57px">
+    </div>
+    <div class="col p-3 bg-dark text-white" style="text-align:center; height:90px">
+    	<span>
+				<p class="headerstyle"><svg class="subscription" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M4 20h16v-8H4v8zm6-7.27L16 16l-6 3.26v-6.53z" opacity=".3"/><path d="M4 6h16v2H4zm2-4h12v2H6zm14 8H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm0 10H4v-8h16v8zm-10-7.27v6.53L16 16z"/></svg>  MARVEL UNLIMITED<br><B>SUBSCRIBE</B></p>
+			</span>
+    </div>
+  </div>
+</div>
+
+<!-- mega nav bar -->
+ <div class="container-fluid">
+<div class="row">
+  <nav class="navbar navbar-expand-lg bg-dark text-white">
+
+  <div class="container">
+    <a class="navbar-brand invisible" href="#">MARVELBar</a> 
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MARVEL</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+      <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown dropdown-mega position-static">
+          <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+            COMICS
+          </a>
+          <div class="dropdown-menu shadow">
+            <div class="mega-content px-md-4">
+              <div class="container-fluid">
+                <div class="row">
+                  <a href="comics.html" class="text-decoration-none link-dark"><h2 class="text-center">LATEST COMICS</h2></a>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    
+                    <div class="list-group">
+                      <H5><a class="list-group-item" href="index.html">MARVEL UNLIMITED</a></H5>
+                      <a class="text-decoration-none link-dark" href="comics.html"><img src="card1.jpg"><br><br>
+                        <p><h5>click here to read more</h5></p>
+                      </a>
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    
+                    <div class="list-group">
+                      <H5><a class="list-group-item" href="index.html">READING LIST</a></H5>
+                      <a class="text-decoration-none link-dark" href="comics.html"><img src="card2.jpg"><br><br>
+                        <p><h5>click here to read more</h5></p>
+                      </a>
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    
+                    <div class="list-group">
+                      <H5><a class="list-group-item" href="index.html">STROM BREAKERS</a></H5>
+                      <a class="text-decoration-none link-dark" href="comics.html"><img src="card3.jpg"><br><br>
+                        <p><h5>click here to read more</h5></p>
+                      </a>
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    
+                    <div class="list-group">
+                      <H5><a class="list-group-item" href="index.html">ALL COMICS</a></H5>
+                      <a class="text-decoration-none link-dark" href="comics.html"><img src="card4.jpg"><br><br>
+                        <p><h5>click here to read more</h5></p>
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+      <li class="nav-item dropdown dropdown-mega position-static">
+          <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+            NEWS
+          </a>
+          <div class="dropdown-menu shadow">
+            <div class="mega-content px-md-4">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    <a class="text-decoration-none link-dark" href="news.html"><h2 class="text-center">TRENDING NEWS</h2></a>
+                    <div class="list-group">
+                      <a class="list-group-item" href="index.html">LATEST NEWS</a>
+                      <a class="list-group-item" href="index.html">ALL NEWS</a>
+                      <img src="movie1.JPG">
+                      <p class="">Black Panther Wakanda Forever Rules Box Office, Earns USD 330mn Globally Over the Weekend</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    <h5>LATEST GAME NEWS</h5>
+                    <div class="list-group">
+                      <a class="text-decoration-none link-dark" href="games.html"><img src="news2.jpg" width="120%" height="120%">
+                      <p>MARVEL SNAP Announces Their Next Season The Power Cosmic</p></a>
+                      <a class="text-decoration-none link-dark" href="games.html"><img src="news2.jpg" width="120%" height="120%">
+                      <p>MARVEL SNAP Announces Their Next Season The Power Cosmic</p></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    <h5>LATEST COMICS NEWS</h5>
+                    <div class="list-group">
+                      <a class="text-decoration-none link-dark" href="games.html"><img src="news3.png" width="120%" height="120%">
+                      <p>'Wasp' #1 First Look Pits Janet & Nadia Against a Classic Super Villain</p></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    <h5>PODCAST NEWS</h5>
+                    <div class="list-group">
+                      <A class="text-decoration-none link-dark" href="PODCAST.COM" >
+                      <img src="NEWS1.JPG" height="120%" width="120%">
+                      <p >Listen Now — Wakanda Forever: The Official Black Panther Podcast</p></A>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      </li>
+      <li class="nav-item dropdown dropdown-mega position-static">
+          <a class="nav-link dropdown-toggle" href="characters.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+            CHARACTERS
+          </a>
+          <div class="dropdown-menu shadow">
+            <div class="mega-content px-md-4">
+              <div class="container-fluid">
+                <div class="row">
+                  <h2 class="text-center"><a href="characters.html" class="text-decoration-none link-dark">TRENDING IN THE UNIVERSE</a></h2>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    <H5><a class="list-group-item" href="characters.html">ALL CHARACTERS</a></H5>
+                    <div class="list-group">
+                      <A class="text-decoration-none link-dark" href="characters.html" >
+                      <img src="char1.JPG" height="80%" width="80%">
+                      <p><H5>3D MAN</H5></p></A>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    <H5><a class="list-group-item" href="index.html">TEAM AND GROUPS</a></H5>
+                    <div class="list-group">
+                      <A class="text-decoration-none link-dark" href="characters.html" >
+                      <img src="char2.JPG" height="80%" width="80%">
+                      <p ><H5>AMIR KHAN</H5></p></A>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                     <H5><a class="list-group-item" href="index.html">CHARACTER SPOTLIGHT</a></H5>
+                    <div class="list-group">
+                     <A class="text-decoration-none link-dark" href="characters.html" >
+                      <img src="char3.JPG" height="90%" width="90%">
+                      <p ><H5>ACE</H5></p></A>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                     <H5><a class="list-group-item" href="index.html">EXPLORE ALL</a></H5>
+                    <div class="list-group">
+                      <A class="text-decoration-none link-dark" href="characters.html" >
+                      <img src="char4.JPG" height="90%" width="90%">
+                      <p ><H5>DELROY GHARETT JR</H5></p></A>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link dropdown-toggle " href="index.html" role="button" data-bs-toggle="dropdown"  aria-expanded="false" data-bs-auto-close="outside"> 
+            MOVIES
+          </a>
+          <div class="dropdown-menu shadow">
+            <div class="mega-content px-md-4">
+              <div class="container-fluid">
+                <div class="row">
+                  <h2 class="text-center"><a href="index.html" class="text-decoration-none link-dark"> MOVIES</a></h2>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    <H5><a class="list-group-item" href="index.html">GUARDIANS OF THE GALAXY:VOLUME3</a></H5>
+                    <div class="list-group">
+                        <A class="text-decoration-none link-dark" href="characters.html" >
+                        <img src="gd.jpg" height="66%" width="66%">
+                        <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">GUARDIANS OF THE GALAXY</H2>
+                        <H4 class="blockquote-footer">JAN 02, 2022</H4>
+                        </p></A>
+             
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    <H5><a class="list-group-item" href="index.html">ANT MAN AND WASP:<br>QUATUMANIA</a></H5>
+                    <div class="list-group">
+                      <A class="text-decoration-none link-dark" href="characters.html" >
+                        <img src="antman.jpg" height="66%" width="66%">
+                        <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">ANT MAN AND WASP:QUATUMANIA</H2>
+                        <H4 class="blockquote-footer">JAN 02, 2022</H4>
+                        </p></A>
+                     
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                     <H5><a class="list-group-item" href="index.html">BLACK PANTHER:<br>WAKANDA FOREVER</a></H5>
+                    <div class="list-group">
+                     <A class="text-decoration-none link-dark" href="characters.html" >
+                        <img src="movie1.jpg" height="66%" width="66%">
+                        <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">BLACK PANTHER:WAKANDA FOREVER</H2>
+                        <H4 class="blockquote-footer">JAN 02, 2022</H4>
+                        </p></A>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                     <H5><a class="list-group-item" href="index.html">SEE ALL MOVIES</a></H5>
+                     <H5><a class="list-group-item" href="https://www.hotstar.com/in">DISNEY+</a></H5>
+                    <div class="list-group">
+                      <A class="text-decoration-none link-dark" href="characters.html" ></A>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+            GAMES
+          </a>
+          <div class="dropdown-menu shadow">
+            <div class="mega-content px-md-4">
+              <div class="container-fluid">
+                <div class="row">
+                  <h2 class="text-center">GAMES</h2>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    <H5><a class="list-group-item" href="index.html">MARVEL MIDNIGHT SUNS</a></H5>
+                    <div class="list-group">
+                        <A class="text-decoration-none link-dark" href="characters.html" >
+                        <img src="m1.jpg" height="66%" width="66%">
+                        <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">MARVEL MIDNIGHT SUNS</H2>
+                        <H4 class="blockquote-footer">JAN 02, 2022</H4>
+                        </p></A>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                    <H5><a class="list-group-item" href="index.html">MARVEL SNAP</a></H5>
+                    <div class="list-group">
+                      <A class="text-decoration-none link-dark" href="characters.html" >
+                        <img src="m2.png" height="66%" width="66%">
+                        <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">MARVEL SNAP</H2>
+                        <H4 class="blockquote-footer">JAN 02, 2022</H4>
+                        </p></A>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                     <H5><a class="list-group-item" href="index.html">CONTEST OF CHAMPIONS</a></H5>
+                    <div class="list-group">
+                     <A class="text-decoration-none link-dark" href="characters.html" >
+                        <img src="m3.jpg" height="66%" width="66%">
+                        <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">CONTEST OF CHAMPIONS</H2>
+                        <H4 class="blockquote-footer">JAN 02, 2022</H4>
+                        </p></A>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                     <H5><a class="list-group-item" href="index.html">SEE ALL GAMES</a></H5>
+                    <div class="list-group">
+                      <A class="text-decoration-none link-dark" href="characters.html" >
+                        <img src="m4.jpg" height="66%" width="66%">
+                        <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">SPIDER MAN MILES MORALS</H2>
+                        <H4 class="blockquote-footer">JAN 02, 2022</H4>
+                        </p></A>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </li>
+    <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="shop.html">SHOP</a>
+    </li>
+    </ul>
+    </div>
+   </div>
+ </div>
+</nav>
+
+</div></div>
+
+ <!-- mega nav bar ending here -->
+
+
+<!-- content -->
+    <div class="row g-0 position-relative">
+      <img class="col-md-4 col-sm-4 col-lg-4 img-fluid" src="part1.jpg" style="height: 3%;">
+      <img class="d-none d-sm-block col-md-4 col-sm-4 col-lg-4 img-fluid d-done" src="wall.jpg" style="height: 3%;">
+      <img class="d-none d-sm-block   col-md-4 col-sm-4 col-lg-4 img-fluid" src="part3demo.png" style="">
+        
+        <div class="position-absolute top-50 start-50">
+          <!-- <h2 class="centered"style=" color:whitesmoke; opacity: 50%;">MOVIES</h2></P> -->
+        </div>
+    </div>
+
+    <div class="container-fluid">
+    <div class="row">
+    <div class="fw-bolder fs-2 text  mx-auto upmovie">UPCOMING MOVIES</div>
+    </div>
+  </div>
+
+
+    <div class="container series">
+      <div class="row">
+            <div class="col-md-2 col-lg-2 col-sm-2"><img src="movie1.jpg">
+              <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">BLACK PANTHER:WAKANDA FOREVER</H2>
+                <H4 class="blockquote-footer">FEB 17, 2023</H4>
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-sm-2"><img src="movie2.jpg">
+            <p><H2 style="font-family: fantasy; font-size:1vw">THOR:LOVE AND THUNDER</H2><BR></BR>
+                <H4 class="blockquote-footer">FEB 17, 2023</H4></p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-sm-2"><img src="movie3.png" height="61%">
+              <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">DOCTER STRANGE:MULTIVERSE OF MADNESS</H2>
+                <H4 class="blockquote-footer">FEB 17, 2023</H4>
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-sm-2"><img src="movie4.jpg" height="61%">
+              <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">ETERNALS</H2>
+                <H4 class="blockquote-footer">MAY 17, 2019</H4>
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-sm-2"><img src="movie5.jpg" height="66%">
+              <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">GUARDIANS OF THE GALAXY</H2>
+                <H4 class="blockquote-footer">JAN 02, 2022</H4>
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-sm-2"><img src="movie6.jpg" height="66%">
+              <p><H2 class="small blockquote" style="font-family: fantasy; font-size: 1vw;">ETERNALS</H2>
+                <H4 class="blockquote-footer">FEB 09, 2024</H4>
+              </p>
+            </div>
+    </div>
+  </div>
+  
+<!-- button loadmore -->
+    <div class="row">
+    <div class="col-lg-12 col-sm-12 col-md-12 text-center">
+    <button class="B1">LOAD MORE</button><br><br><br>
+    </div>
+    </div>  
+   
+
+  <div class="row">
+  <div class="col-lg-12 col-sm-12 col-md-12 card text-bg-dark">
+  <img src="cover.jpg" class="card-img" alt="sgv">
+  <div class="card-img-overlay">
+  <button class="btn btn-primary">STREAMING NOW</button>
+  </div>
+  </div>
+  </div>
+
+
+<!-- <div class="row bg-black p-5">
+<div class="col-lg-12 col-sm-12 col-md-12">
+<button class="scrollToTop" onclick="scrollToTop()"><i class="fa fa-sort-asc" id="fafa"></i></button>   
+</div>
+</div> -->
+
+<!-- back to top button -->
+      <button class="btn" onclick="topFunction()" id="myBtn" title="Go to top">
+       <i class="fa fa-sort-asc" style="font-size:24px"></i>
+      </button>
+      <script>
+      var mybutton = document.getElementById("myBtn");
+
+
+      window.onscroll = function() {scroll()};
+
+      function scroll() {
+        if ( document.documentElement.scrollTop > 500) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+      </script>
+
+<div class="bg-black text-white">
+<div class="row">
+  
+      <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"></div>
+      <div class="col-md-3 col-lg-3 col-sm-3">
+        <img class="img-fluid" style="max-width: 100%;
+    height: 100%;" src="adv.jpg">
+      </div>
+      <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
+        <div class="text-center"><br>
+          <p>
+          <h3 class="insider" style="font-size:1vw">MARVEL INSIDER</h3>
+          <h1 style="color: antiquewhite;
+    font-weight: 600;
+    font-size: 1vw;
+    font-family: revert;
+    opacity: 50%;">Watch, Earn, Redeem!</h1>
+          <h3 style="font-size: 1vw;
+    font-family: fantasy;
+    letter-spacing: 1px;
+    opacity: 50%;
+    color: brown;">Get rewarded for doing what you already do as a fan</h3>
+          
+          <button class="B2">JOIN NOW</button></p>
+          </div>
+    
+      </div>
+
+  </div>
+</div> 
+
+<div class="row bg-black text-white pt-5">
+
+  <div class="col-md-1 col-lg-1 col-sm-1"></div>
+  <div class="d-none d-lg-block col-sm-1 col-xs-1 col-md-1 col-lg-1">
+    <img class="img-fluid mt-2 " src="m.png" height="100%" width="98%">
+  </div>
+  <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-6">
+        <p>
+          <h5 class="footerstyling" style="font-size: 1vw;">ABOUT MARVEL</h5>
+          <h5 class="footerstyling" style="font-size: 1vw;">HELP/FAQS</h5>
+          <h5 class="footerstyling" style="font-size: 1vw;">CAREEERS</h5>
+          <h5 class="footerstyling" style="font-size: 1vw;">INTERNSHIPS</h5>
+
+        </p>
+
+      </div>
+
+      <div class="col-md-6 col-lg-6 col-sm-6">
+          
+           <p >
+          <h5 class="footerstyling" style="font-size: 1vw;">ADVERTISING</h5>
+          <h5 class="footerstyling" style="font-size: 1vw;">DISENY+</h5>
+          <h5 class="footerstyling" style="font-size: 1vw;">MARVELHQ.COM</h5>
+          <h5 class="footerstyling" style="font-size: 1vw;">REDEEM DIGITAL COMICS</h5>
+
+        </p>
+      </div>
+
+      </div>
+  </div>
+  <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-3 mt-4"><img class="img-fluid" src="insiderlogo.png" height="52%" width="63%"> </div>
+      <div class="col-md-9 col-lg-9 col-sm-9 footerstyling">
+        <p>
+          <h5 style="font-size: 1vw;">MARVEL INSIDER</h5><h6 style="font-size: 1vw;">Get Rewarded for Being a Marvel Fan</h6>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-3"><img class="img-fluid" src="marvelunimited.png" height="80%" width="63%"> </div>
+      <div class="col-md-9 col-lg-9 col-sm-9 footerstyling">
+        <p>
+          <h5>MARVEL UNLIMITED</h5><h6>Avves Over 30,000+ Digital Comics</h6>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+    <div class="row footerstyling">FOLLOW MARVEL</div>
+    <div class="row footerstyling pt-3">
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3"><i class="fa fa-instagram changeme" style="font-size:30px;color:white;"></i></div>
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3"><i class="fa fa-facebook-f changeme" style="font-size:30px;color:white;"></i></div>
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3"><i class="fa fa-twitter changeme" style="font-size:30px;color:white;"></i></div>
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3"><i class="fa fa-youtube changeme" style="font-size:30px;color:white;"></i></div>
+    </div>
+    <div class="row footerstyling pt-3">
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3"><i class="fa fa-pinterest changeme" style="font-size:30px;color:white;"></i></div>
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3"><i class="fa fa-snapchat changeme" style="font-size:30px;color:white;"></i></div>
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3"><i class="fa fa-app-store changeme" style="font-size:30px;color:white;"></i></div>
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3"></div>
+    </div>
+  </div>
+  <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1"></div>
+</div> 
+<div class="bg-black text-white">
+<div class="container">
+<div class="row pt-5">
+  
+    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2 footerstyl2">Terms of Use</div>
+    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2 footerstyl2">Privacy Policy</div>
+    <div class="col-md-2 col-lg-3 col-sm-2 col-xs-3 footerstyl2">Your California Privacy Rights</div>
+    <div class="col-md-2 col-lg-3 col-sm-2 col-xs-3 footerstyl2">Do Not Sell My Personal</div>
+    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2 footerstyl2">Online policy</div>
+   
+  </div>
+</div>
+</div>
+<div class="bg-dark text-white">
+<div class="container">  
+<div class="row">
+  
+    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 "></div>
+    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 ">Marvel Insider Terms @2022 MARVEL</div>
+    <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 "></div>
+    
+  </div>
+</div>
+</div>  
+
+
+</body>
+</html>
+
